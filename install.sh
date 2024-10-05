@@ -22,3 +22,6 @@ cp ~/dotfiles/.gitignore_global ~/.gitignore_global
 
 # Command to update the Git configuration:
 git config --global core.excludesfile ~/.gitignore_global
+
+# Copy .pylintrc to home directory
+cp ~/dotfiles/.pylintrc ~/.pylintrc
