@@ -16,3 +16,9 @@ chsh -s $(which fish)
 # Set VS Code display language to English
 mkdir -p ~/.vscode-remote/data/Machine
 echo '{"locale":"en"}' > ~/.vscode-remote/data/Machine/locale.json
+
+# Copy .gitignore_global locally
+cp ~/dotfiles/.gitignore_global ~/.gitignore_global
+
+# Command to update the Git configuration:
+git config --global core.excludesfile ~/.gitignore_global
