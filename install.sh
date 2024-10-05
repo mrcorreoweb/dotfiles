@@ -16,10 +16,6 @@ ln -sf "$DOTFILES_PATH/config.fish" ~/.config/fish/config.fish
 # Set Fish as default shell
 # chsh -s $(which fish)
 
-# Set VS Code display language to English
-mkdir -p ~/.vscode-remote/data/Machine
-echo '{"locale":"en"}' > ~/.vscode-remote/data/Machine/locale.json
-
 # Copy .gitignore_global locally (if it exists)
 if [ -f "$DOTFILES_PATH/.gitignore_global" ]; then
     cp "$DOTFILES_PATH/.gitignore_global" ~/.gitignore_global
@@ -35,5 +31,11 @@ if [ -f "$DOTFILES_PATH/.pylintrc" ]; then
 else
     echo ".pylintrc not found in dotfiles"
 fi
+
+# Set VS Code display language to English
+mkdir -p ~/.vscode-remote/data/Machine
+echo '{"locale":"en"}' > ~/.vscode-remote/data/Machine/locale.json
+echo 'export LANG=en_US.UTF-8' >> ~/.bashrc
+echo 'export LANG=en_US.UTF-8' >> ~/.profile
 
 echo "Dotfiles installation completed successfully!"
