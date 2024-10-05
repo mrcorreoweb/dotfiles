@@ -1,0 +1,31 @@
+# Ignoring files to git in Django projects
+
+## Ignore enviroment variables for critical settings
+
+*.env
+
+## Ignore Python cache files
+
+**pycache**/
+\*.py[cod]
+
+## Ignore virtual environment directories
+
+venv/
+.env/
+
+## Ignore Django migration files
+
+_.pyc
+_.pyo
+_.pyd
+_.pdb
+_.egg
+_.egg-info/
+dist/
+build/
+\*.log
+
+## to Ignore VS Code specific files
+## Uncomment the following line
+# .vscode/
