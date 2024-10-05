@@ -1,0 +1,4 @@
+# This tells Git to use the .gitignore_global file for global ignores.
+
+[core]
+    excludesfile = ~/.gitignore_global
