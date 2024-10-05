@@ -12,3 +12,7 @@ ln -sf ~/dotfiles/config.fish ~/.config/fish/config.fish
 
 # Set Fish as default shell
 chsh -s $(which fish)
+
+# Set VS Code display language to English
+mkdir -p ~/.vscode-remote/data/Machine
+echo '{"locale":"en"}' > ~/.vscode-remote/data/Machine/locale.json
