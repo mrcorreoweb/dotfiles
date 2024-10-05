@@ -3,12 +3,15 @@
 set -e  # Exit immediately if a command exits with a non-zero status.
 set -x  # Print commands and their arguments as they are executed.
 
+# Set the correct path for the dotfiles
+DOTFILES_PATH="/workspaces/.codespaces/.persistedshare/dotfiles"
+
 # Fish is pre-installed in Codespaces, so we don't need to install it
 # Create Fish config directory if it doesn't exist
 mkdir -p ~/.config/fish
 
 # Symlink Fish config file
-ln -sf ~/dotfiles/config.fish ~/.config/fish/config.fish
+ln -sf "$DOTFILES_PATH/config.fish" ~/.config/fish/config.fish
 
 # Set Fish as default shell
 # chsh -s $(which fish)
@@ -17,13 +20,20 @@ ln -sf ~/dotfiles/config.fish ~/.config/fish/config.fish
 mkdir -p ~/.vscode-remote/data/Machine
 echo '{"locale":"en"}' > ~/.vscode-remote/data/Machine/locale.json
 
-# Copy .gitignore_global locally
-cp ~/dotfiles/.gitignore_global ~/.gitignore_global
+# Copy .gitignore_global locally (if it exists)
+if [ -f "$DOTFILES_PATH/.gitignore_global" ]; then
+    cp "$DOTFILES_PATH/.gitignore_global" ~/.gitignore_global
+    # Update the Git configuration
+    git config --global core.excludesfile ~/.gitignore_global
+else
+    echo ".gitignore_global not found in dotfiles"
+fi
 
-# Command to update the Git configuration:
-git config --global core.excludesfile ~/.gitignore_global
-
-# Copy .pylintrc to home directory
-cp ~/dotfiles/.pylintrc ~/.pylintrc
+# Copy .pylintrc to home directory (if it exists)
+if [ -f "$DOTFILES_PATH/.pylintrc" ]; then
+    cp "$DOTFILES_PATH/.pylintrc" ~/.pylintrc
+else
+    echo ".pylintrc not found in dotfiles"
+fi
 
 echo "Dotfiles installation completed successfully!"
