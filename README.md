@@ -11,27 +11,26 @@ This special repository is recognized by GitHub Codespaces and used to manage my
 - `.gitignore_global`: 🙈 Global Git ignore rules
 - `.gitconfig`: 🔧 Git configuration file
 - `.pylintrc`: 🐍 Global Pylint configuration
+- `.env`: 📦 Enviroment variables
 
 ## 🛠 What it does
 
 This repository automates the setup of my preferred development environment:
 
-- 🐟 Installs and configures Fish shell
-- 🌐 Sets VS Code display language to English
+- 🐟 Configures Fish shell 
 - 🔧 Configures global Git ignore rules and settings
 - 🐍 Sets up global Pylint configuration
+- 📦 Prepare the enviroment variables file for update
 
 ## 🔄 Installation
 
 The `install.sh` script performs the following actions:
 
-1. 📦 Installs Fish shell
-2. 🔗 Symlinks Fish configuration
-3. 🐚 Sets Fish as the default shell
-4. 🇬🇧 Configures VS Code to use English
-5. 📄 Sets up global Git ignore
-6. 🔧 Configures Git to use the global ignore file
-7. 🐍 Sets up global Pylint configuration
+1. 🔗 Symlinks Fish configuration
+2. 📄 Sets up global Git ignore
+3. 🔧 Configures Git to use the global ignore file
+4. 🐍 Sets up global Pylint configuration
+5. 📦 Deploy the enviroment variables file
 
 ## 🚀 Usage
 
