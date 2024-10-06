@@ -42,17 +42,4 @@ else
 fi
 
 
-# Set VS Code display language to English 
-# Create necessary directories
-mkdir -p ~/.config/Code/User
-# Set VS Code display language to English
-echo '{"locale":"en"}' > ~/.config/Code/User/locale.json
-# Set VS Code editor language settings to English
-echo '{"editor.displayLanguage": "en"}' > ~/.config/Code/User/settings.json
-# Set system locale to English
-echo 'export LANG=en_US.UTF-8' >> ~/.bashrc
-echo 'export LANG=en_US.UTF-8' >> ~/.profile
-# Apply the changes in the current session
-export LANG=en_US.UTF-8
-
 echo "Dotfiles installation completed successfully!"
