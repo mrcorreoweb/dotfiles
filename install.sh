@@ -43,9 +43,9 @@ fi
 
 
 # Set VS Code display language to English 
-# mkdir -p ~/.vscode-remote/data/Machine
-# echo '{"locale":"en"}' > ~/.vscode-remote/data/Machine/locale.json
-# echo 'export LANG=en_US.UTF-8' >> ~/.bashrc
-# echo 'export LANG=en_US.UTF-8' >> ~/.profile
+mkdir -p ~/.vscode-remote/data/Machine
+echo '{"locale":"en"}' > ~/.vscode-remote/data/Machine/locale.json
+echo 'export LANG=en_US.UTF-8' >> ~/.bashrc
+echo 'export LANG=en_US.UTF-8' >> ~/.profile
 
 echo "Dotfiles installation completed successfully!"
