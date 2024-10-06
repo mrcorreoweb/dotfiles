@@ -12,6 +12,8 @@ mkdir -p ~/.config/fish
 
 # Symlink Fish config file
 ln -sf "$DOTFILES_PATH/config.fish" ~/.config/fish/config.fish
+# or copy the Fish config file
+# cp "$DOTFILES_PATH/config.fish" ~/.config/fish/config.fish
 
 # Set Fish as default shell
 # chsh -s $(which fish)
@@ -31,6 +33,14 @@ if [ -f "$DOTFILES_PATH/.pylintrc" ]; then
 else
     echo ".pylintrc not found in dotfiles"
 fi
+
+# Copy .env file to home directory
+if [ -f "$DOTFILES_PATH/.env" ]; then
+    cp $DOTFILES_PATH/.env ~/.env
+else
+    echo ".env not found in dotfiles"
+fi
+
 
 # Set VS Code display language to English 
 # mkdir -p ~/.vscode-remote/data/Machine
