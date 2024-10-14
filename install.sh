@@ -6,6 +6,24 @@ set -x  # Print commands and their arguments as they are executed.
 # Set the correct path for the dotfiles
 DOTFILES_PATH="/workspaces/.codespaces/.persistedshare/dotfiles"
 
+# Create ~/bin directory if it doesn't exist
+mkdir -p ~/bin
+
+# Copy the copy-file-to-branches.sh script to ~/bin
+if [ -f "$DOTFILES_PATH/copy-file-to-branches.sh" ]; then
+    cp "$DOTFILES_PATH/copy-file-to-branches.sh" ~/bin/
+    chmod +x ~/bin/copy-file-to-branches.sh
+else
+    echo "copy-file-to-branches.sh not found in dotfiles"
+fi
+
+# Add ~/bin to PATH if it's not already in the PATH
+if ! echo "$PATH" | grep -q "$HOME/bin"; then
+    echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
+    # For fish shell users, also add it to the Fish config
+    echo 'set -x PATH $HOME/bin $PATH' >> ~/.config/fish/config.fish
+fi
+
 # Fish is pre-installed in Codespaces, so we don't need to install it
 # Create Fish config directory if it doesn't exist
 mkdir -p ~/.config/fish
@@ -40,6 +58,5 @@ if [ -f "$DOTFILES_PATH/.env" ]; then
 else
     echo ".env not found in dotfiles"
 fi
-
 
 echo "Dotfiles installation completed successfully!"
