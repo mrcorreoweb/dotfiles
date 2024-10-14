@@ -41,3 +41,8 @@ function fish_prompt
     set_color normal
     echo -n ' > '
 end
+
+# Add ~/bin to PATH if it's not already present
+if not contains $HOME/bin $PATH
+    set -gx PATH $HOME/bin $PATH
+end
