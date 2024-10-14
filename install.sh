@@ -42,6 +42,8 @@ else
 fi
 
 # Copy the copy-file-to-branches.sh script to ~/.local/bin
+# ~/.local/bin is already in PATH for GitHub Codespaces
+# so it will be accesible from everywhere
 if [ -f "$DOTFILES_PATH/copy-file-to-branches.sh" ]; then
     cp "$DOTFILES_PATH/copy-file-to-branches.sh" ~/.local/bin/
     chmod +x ~/.local/bin/copy-file-to-branches.sh
