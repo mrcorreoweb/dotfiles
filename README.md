@@ -45,35 +45,35 @@ GitHub Codespaces automatically detects and uses this repository when creating n
 Once the Codespace is created, the `copy-file-to-branches.sh` script will be installed in the `~/bin` directory. You can use this script from any project to copy a file to multiple branches.
 
 Example command:
-
-copy-file-to-branches.sh <file> <branch1> <branch2> ...
-
-For instance, to copy `README.md` to branches `main` and `develop`, run:
-
-copy-file-to-branches.sh README.md main develop
-
-The script will switch between the specified branches, copy the file, and commit the changes if necessary.
+```bash
+copy-file-to-branches.sh <file>
+```
+For instance, to copy `README.md` from the active brach to the other branches, add, commit and push the file, run:
+```bash
+copy-file-to-branches.sh README.md
+```
+The script will switch between the specified branches, copy the file, and commit and pushing the changes if necessary.
 
 Make sure that `~/bin` is included in your `PATH`, so you can run the script from any directory:
-
+```bash
 echo $PATH
-
+```
 If `~/bin` is not in your `PATH`, you can add it by updating your shell configuration:
-
+```bash
 echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc  # For bash users
-
+```
 or 
-
+```bash
 echo 'export PATH="$HOME/bin:$PATH"' >> ~/.config/fish/config.fish  # For fish users
-
+```
 After updating, either restart your terminal or run:
-
+```bash
 source ~/.bashrc  # For bash
-
+```
 or
-
+```bash
 source ~/.config/fish/config.fish  # For fish
-
+```
 Once done, the `copy-file-to-branches.sh` script will be available for use globally in the Codespace.
 
 ## 🛠 Customization
