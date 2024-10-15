@@ -1,7 +1,7 @@
 #!/bin/bash
 #===============================================================================
 # Script: copy-file-to-branches.sh
-# Description: This script restores a specified file from the active branch
+# Description: This script copies a specified file from the active branch
 #              to all other local and remote branches using `git restore`.
 #
 # Usage: ./copy-file-to-branches.sh <file-to-copy>
