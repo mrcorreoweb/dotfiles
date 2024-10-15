@@ -7,12 +7,12 @@ This special repository is automatically recognized by GitHub Codespaces and use
 ## 📂 Contents
 
 - `install.sh`: 🚀 Installation script that sets up the environment
-- `copy-file-to-branches.sh`: 📄 A script to copy files to multiple Git branches
 - `config.fish`: 🐟 Fish shell configuration
 - `.gitignore_global`: 🙈 Global Git ignore rules
 - `.gitconfig`: 🔧 Git configuration file
 - `.pylintrc`: 🐍 Global Pylint configuration
 - `.env`: 📦 Enviroment variables
+- `copy-file-to-branches.sh`: 📄 A script to copy files to multiple Git branches
 
 ## 🛠 What it does
 
@@ -33,8 +33,7 @@ The `install.sh` script performs the following actions:
 3. 🔧 Configures Git to use the global ignore file
 4. 🐍 Sets up global Pylint configuration
 5. 📦 Deploy the enviroment variables file
-6. 📄 Installs `copy-file-to-branches.sh` to `~/bin` and makes it executable
-7. 🛠 Ensures `~/bin` is added to the `PATH` if it's not already included
+6. 📄 Installs `copy-file-to-branches.sh` to `~/.local/bin` and makes it executable
 
 ## 🚀 Usage
 
@@ -42,7 +41,8 @@ GitHub Codespaces automatically detects and uses this repository when creating n
 
 ### Using the `copy-file-to-branches.sh` script
 
-Once the Codespace is created, the `copy-file-to-branches.sh` script will be installed in the `~/bin` directory. You can use this script from any project to copy a file to multiple branches.
+Once the Codespace is created, the `copy-file-to-branches.sh` script will be installed in the `~/.local/bin` directory. 
+You can use this script from anywhere in any project to copy an specified file to multiple branches.
 
 Example command:
 ```bash
@@ -52,29 +52,7 @@ For instance, to copy `README.md` from the active brach to the other branches, a
 ```bash
 copy-file-to-branches.sh README.md
 ```
-The script will switch between the specified branches, copy the file, and commit and pushing the changes if necessary.
-
-Make sure that `~/bin` is included in your `PATH`, so you can run the script from any directory:
-```bash
-echo $PATH
-```
-If `~/bin` is not in your `PATH`, you can add it by updating your shell configuration:
-```bash
-echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc  # For bash users
-```
-or 
-```bash
-echo 'export PATH="$HOME/bin:$PATH"' >> ~/.config/fish/config.fish  # For fish users
-```
-After updating, either restart your terminal or run:
-```bash
-source ~/.bashrc  # For bash
-```
-or
-```bash
-source ~/.config/fish/config.fish  # For fish
-```
-Once done, the `copy-file-to-branches.sh` script will be available for use globally in the Codespace.
+The script will switch between the specified branches, copy the file, and commit and push the changes if necessary.
 
 ## 🛠 Customization
 
