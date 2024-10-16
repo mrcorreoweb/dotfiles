@@ -19,7 +19,7 @@ This special repository is automatically recognized by GitHub Codespaces and use
 This repository automates the setup of my preferred development environment:
 
 - 🐟 Configures Fish shell 
-- 🔧 Configures global Git ignore rules and settings
+- 🔧 Configures global Git ignore rules and Git settings
 - 🐍 Sets up global Pylint configuration
 - 📦 Prepare the enviroment variables file for update
 - 📄 Installs `copy-file-to-branches.sh` into `~/bin` for easy access across projects
