@@ -27,6 +27,13 @@ else
     echo ".gitignore_global not found in dotfiles"
 fi
 
+# Copy .gitconfig to home directory (if it exists)
+if [ -f "$DOTFILES_PATH/.gitconfig" ]; then
+    cp "$DOTFILES_PATH/.gitconfig" ~/.gitconfig
+else
+    echo ".gitconfig not found in dotfiles"
+fi
+
 # Copy .pylintrc to home directory (if it exists)
 if [ -f "$DOTFILES_PATH/.pylintrc" ]; then
     cp "$DOTFILES_PATH/.pylintrc" ~/.pylintrc

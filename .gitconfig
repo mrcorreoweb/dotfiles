@@ -2,7 +2,7 @@
 [core]
     excludesfile = ~/.gitignore_global
 
-# Enable globally the "git config --global push.default current"
-# and Git will automatically push to a branch of the same name on the remote
+# The Git push command will automatically create  
+# a remote branch with the same name.
 [push]
     default = current
