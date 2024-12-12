@@ -22,7 +22,7 @@ This repository automates the setup of my preferred development environment:
 - 🔧 Configures global Git ignore rules and Git settings
 - 🐍 Sets up global Pylint configuration
 - 📦 Prepare the enviroment variables file for update
-- 📄 Installs `copy-file-to-branches.sh` into `~/bin` for easy access across projects
+- 📄 Installs `copy-file-to-branches.sh` into `~/.local/bin` for easy access across projects
 
 ## 🔄 Installation
 
