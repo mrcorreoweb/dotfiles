@@ -13,7 +13,7 @@ This special repository is automatically recognized by GitHub Codespaces and use
 - `.pylintrc`: 🐍 Global Pylint configuration
 - `.env`: 📦 Enviroment variables
 - `copy-file-to-branches.sh`: 📄 A script to copy files to multiple Git branches
-- `reset_django.sh`: 📄 A script to reset the Django database and migrations.
+- `reset_django.sh`: 📄 A script to empty the Django database and restart migrations.
 
 ## 🛠 What it does
 
