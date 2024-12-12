@@ -48,14 +48,23 @@ else
     echo ".env not found in dotfiles"
 fi
 
-# Copy the copy-file-to-branches.sh script to ~/.local/bin
 # ~/.local/bin is already in PATH for GitHub Codespaces
-# so it will be accesible from everywhere!
+# so copying files there make them accesible from everywhere!
+
+# Copy the copy-file-to-branches.sh script to ~/.local/bin
 if [ -f "$DOTFILES_PATH/copy-file-to-branches.sh" ]; then
     cp "$DOTFILES_PATH/copy-file-to-branches.sh" ~/.local/bin/
     chmod +x ~/.local/bin/copy-file-to-branches.sh
 else
     echo "copy-file-to-branches.sh not found in dotfiles"
 fi
+# Copy the reset_django.sh script to ~/.local/bin
+if [ -f "$DOTFILES_PATH/reset_django.sh" ]; then
+    cp "$DOTFILES_PATH/reset_django.sh" ~/.local/bin/
+    chmod +x ~/.local/bin/reset_django.sh
+else
+    echo "reset_django.sh not found in dotfiles"
+fi
+
 
 echo "Dotfiles installation completed successfully!"
