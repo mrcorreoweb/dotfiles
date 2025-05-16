@@ -29,6 +29,9 @@ build/
 ## Ignore SQLite database files
 *.sqlite3
 
+## Ignore files in fixtures directory
+fixtures/
+
 ## Ignore VS Code specific files
 .vscode/
 
